@@ -9,6 +9,8 @@ public class Timeline : MonoBehaviour
 
 	void Start()
 	{
+        _eventlist = new List<TimelineEvent>();
+
         for(int index = 0; index < _events.Length; index++)
         {
             _eventlist.Add(_events[index]);
@@ -23,8 +25,11 @@ public class Timeline : MonoBehaviour
 
 	IEnumerator RunTimeline()
 	{
-		foreach(TimelineEvent currentEvent in _eventlist)
+		for(int index = 0; index < _events.Length; index++)
 		{
+            TimelineEvent currentEvent = _events[index];
+            bool reimporting = currentEvent._reimportEvent;
+
 			if(!currentEvent.gameObject.activeSelf)
 			{
 				currentEvent.gameObject.SetActive(true);
@@ -35,10 +40,27 @@ public class Timeline : MonoBehaviour
 				yield return null;
 			}
 
-            _eventlist.Remove(currentEvent);
             Destroy(currentEvent.gameObject);
+
+            if(reimporting == true)
+            {
+                Reimport(index);
+                break;
+            }
 		}
 
 		yield return null;
 	}
+
+    void Reimport(int indexUpdatingTo)
+    {
+        for(int index = 0; index <= indexUpdatingTo; index++)
+        {
+            _eventlist.Remove(_events[index]);
+        }
+
+        _events = _eventlist.ToArray();
+
+        StartCoroutine(RunTimeline());
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TimelineEvent : MonoBehaviour
 {
+    public bool _reimportEvent;
 	private IAction[] _actions;
 	[HideInInspector] public bool _eventComplete;
 
