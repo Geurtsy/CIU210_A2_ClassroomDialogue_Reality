@@ -5,9 +5,15 @@ using UnityEngine;
 public class Timeline : MonoBehaviour 
 {
 	[SerializeField] private TimelineEvent[] _events;
+    private List<TimelineEvent> _eventlist;
 
 	void Start()
 	{
+        for(int index = 0; index < _events.Length; index++)
+        {
+            _eventlist.Add(_events[index]);
+        }
+
 		StartCoroutine(RunTimeline());
 	}
 
@@ -17,22 +23,22 @@ public class Timeline : MonoBehaviour
 
 	IEnumerator RunTimeline()
 	{
-		foreach(TimelineEvent currentEvent in _events)
+		foreach(TimelineEvent currentEvent in _eventlist)
 		{
 			if(!currentEvent.gameObject.activeSelf)
 			{
 				currentEvent.gameObject.SetActive(true);
 			}
 
-			while (!currentEvent._eventComplete)
+			while(!currentEvent._eventComplete)
 			{
 				yield return null;
 			}
 
-			Destroy(currentEvent.gameObject);
+            _eventlist.Remove(currentEvent);
+            Destroy(currentEvent.gameObject);
 		}
 
 		yield return null;
 	}
-
 }
