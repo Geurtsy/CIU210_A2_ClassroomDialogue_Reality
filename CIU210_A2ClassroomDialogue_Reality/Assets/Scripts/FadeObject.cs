@@ -36,6 +36,9 @@ public class FadeObject : Action, IAction
 		if(!_fadeIn)
 			rend.material.color = Color.Lerp (startColour, new Color(startColour.r, startColour.g, startColour.b, 0), lerpVar);
 		else
-			rend.material.color = Color.Lerp (startColour, new Color(startColour.r, startColour.g, startColour.b, 255), lerpVar);
+        {
+            Debug.Log(startColour + " " + startColour.a + " " + lerpVar);
+            rend.material.color = Color.Lerp(startColour, new Color(startColour.r, startColour.g, startColour.b, 1.0f), lerpVar);
+        }
 	}
 }

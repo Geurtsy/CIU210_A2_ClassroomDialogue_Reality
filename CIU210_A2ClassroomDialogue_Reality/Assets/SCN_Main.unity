@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -792,7 +792,6 @@ GameObject:
   - component: {fileID: 136647676}
   - component: {fileID: 136647678}
   - component: {fileID: 136647677}
-  - component: {fileID: 136647679}
   m_Layer: 0
   m_Name: CTRL_Event0
   m_TagString: Untagged
@@ -836,20 +835,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventComplete: 0
---- !u!114 &136647679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 136647675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4c0a7863f06f74ba4697b0121a7bc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fadeIn: 1
-  _rendererToFade: {fileID: 1855191253}
-  _lerpTime: 3
 --- !u!1 &143273766
 GameObject:
   m_ObjectHideFlags: 0
@@ -23107,7 +23092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1067911422
 Transform:
   m_ObjectHideFlags: 0
@@ -23168,7 +23153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeIn: 1
   _rendererToFade: {fileID: 1855191253}
-  _lerpTime: 5
+  _lerpTime: 6
 --- !u!114 &1067911426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45620,7 +45605,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: a8a2064660ecc42fab77221fa24060bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -45654,13 +45639,13 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 1
-  m_FontSize: 24
+  m_FontSize: 50
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 12800000, guid: 9ebb6ca5ee4094addac513cf8528f1e1, type: 2}
   m_Color:
     serializedVersion: 2
-    rgba: 3669760
+    rgba: 4281859840
 --- !u!4 &1855191255
 Transform:
   m_ObjectHideFlags: 0
